@@ -146,12 +146,12 @@ public class Scroll {
         LEFT,
         RIGHT;
     }
-
+/*
     public static void scrollDowntoID(String TEXT, AppiumDriver driver) {
         ((MobileElement) driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()"
                 + "com.trycircle.android.qa:id/cats_recycler")).getChildByText("" +
                 "new UiSelector().className(\"androidx.recyclerview.widget.RecyclerView\"), "+TEXT+"))"));
 
     }
-
+*/
 }

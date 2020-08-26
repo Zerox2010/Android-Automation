@@ -31,7 +31,7 @@ public class DiscoveryPage {
 
     public KidsPage clickKidsLink() {
         Scroll scroll = new Scroll(driver);
-        scroll.newSwipeHotizintal(Kids);
+        scroll.newSwipeHotizintal("Kids");
        // clickLinkByID("com.trycircle.android.qa:id/imgCatIcon");
 
         return new KidsPage(driver);
