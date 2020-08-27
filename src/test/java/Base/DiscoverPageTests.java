@@ -8,12 +8,6 @@ import static org.testng.Assert.assertEquals;
 
 public class DiscoverPageTests extends BaseTests {
 
-    @Test
-    public void ClickKidsPage() {
-      KidsPage kidsPage = discoveryPage.clickKidsLink();
-      assertEquals(kidsPage.getPageTitle(),"Kids");
-      kidsPage.backButton();
-    }
 
 /*
     @Test

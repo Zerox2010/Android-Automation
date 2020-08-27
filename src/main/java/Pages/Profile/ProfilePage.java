@@ -42,7 +42,7 @@ public class ProfilePage {
 
     public DiscoveryPage logOutButton() {
         Scroll scroll = new Scroll(driver);
-       scroll.swipeToElement("Log Out");
+       scroll.scrollVertical("Log Out");
         return new DiscoveryPage(driver);
     }
 

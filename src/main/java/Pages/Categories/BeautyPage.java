@@ -9,22 +9,22 @@ public class BeautyPage {
     static AppiumDriver<MobileElement> driver;
 
     private By screenTitle = By.id("com.trycircle.android.qa:id/screenTitle");
-    private By backbtn = By.id("com.trycircle.android.qa:id/btnBack");
 
 
     public BeautyPage (AppiumDriver<MobileElement> driver) {
         this.driver = driver;
     }
-    private void clickLinkByID(String LinkID) {
+
+    private void clickLink(String LinkID) {
         driver.findElement(By.id(LinkID)).click();
     }
 
-    public String getBeautyTitle() {
+    public String getPageTitle() {
         return driver.findElement(screenTitle).getText();
     }
 
     public DiscoveryPage backButton() {
-        clickLinkByID("com.trycircle.android.qa:id/btnBack");
+        clickLink("com.trycircle.android.qa:id/btnBack");
         return new DiscoveryPage(driver);
     }
 }

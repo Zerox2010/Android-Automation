@@ -26,6 +26,7 @@ public class BaseTests {
     protected ElectronicsPage electronicsPage;
 
 
+
     @BeforeTest
     public void setup() {
 

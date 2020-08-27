@@ -14,11 +14,12 @@ public class ElectronicsPage {
     public ElectronicsPage(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
     }
+
     private void clickLink(String LinkID) {
         driver.findElement(By.id(LinkID)).click();
     }
 
-    public String getElectronicsTitle() {
+    public String getPageTitle() {
         return driver.findElement(screenTitle).getText();
     }
 

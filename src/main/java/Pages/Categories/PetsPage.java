@@ -5,13 +5,13 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 
-public class KidsPage {
+public class PetsPage {
     static AppiumDriver<MobileElement> driver;
 
     private By screenTitle = By.id("com.trycircle.android.qa:id/screenTitle");
 
 
-    public KidsPage(AppiumDriver<MobileElement> driver) {
+    public PetsPage(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
     }
 

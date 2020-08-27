@@ -1,12 +1,8 @@
 package Pages.Home;
 
-import Pages.Campaigns.GlowUpPage;
-import Pages.Campaigns.SummerAtHomePage;
-import Pages.Categories.BeautyPage;
-import Pages.Categories.ElectronicsPage;
-import Pages.Categories.KidsPage;
-import Pages.Categories.ToysPage;
-import Pages.Profile.ProfilePage;
+import Pages.Campaigns.*;
+import Pages.Categories.*;
+import Pages.Profile.*;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
@@ -18,35 +14,85 @@ public class DiscoveryPage {
 
     static AppiumDriver<MobileElement> driver;
 
-    private By btnMore = By.id("com.trycircle.android.qa:id/btn_more");
-    private By summerAtHomeTxt = By.name("Summer at Home");
-    private By summerAtHomeID = By.id("com.trycircle.android.qa:id/tv_promotion_title");
-
 
     public DiscoveryPage(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
     }
 
+    // Click Method
     private void clickLinkByID(String LinkID) {
         driver.findElement(By.id(LinkID)).click();
     }
 
-    public KidsPage clickKidsLink() {
+    //Scroll Horizontal And Click Method
+    public void scrollHorizontalAndClick(String categoryName){
         Scroll scroll = new Scroll(driver);
-        scroll.newSwipeHotizintal("Kids");
-        return new KidsPage(driver);
+        scroll.swipeHorizontal(categoryName);
     }
 
-    public SummerAtHomePage clickSummerPromotion() {
+    //Scroll Vertical And Click Method
+    public void scrollVerticalAndClick(String campaignName){
         Scroll scroll = new Scroll(driver);
-        scroll.swipeToElement("Summer at Home");
+        scroll.scrollVertical(campaignName);
+    }
+
+    // Actions on Categories Links
+    public ElectronicsPage clickElectronicsLink() {
+        scrollHorizontalAndClick("Electronics");
+        return new ElectronicsPage(driver);
+    }
+    public BooksPage clickBooksLink() {
+        scrollHorizontalAndClick("Books");
+        return new BooksPage(driver);
+    }
+    public HomePage clickHomeLink() {
+        scrollHorizontalAndClick("Home");
+        return new HomePage(driver);
+    }
+    public ToysPage clickToysLink() {
+        scrollHorizontalAndClick("Toys");
+        return new ToysPage(driver);
+    }
+    public PerfumesPage clickPerfumesLink() {
+        scrollHorizontalAndClick("Perfumes");
+        return new PerfumesPage(driver);
+    }
+    public PetsPage clickPetsLink() {
+        scrollHorizontalAndClick("Pets");
+        return new PetsPage(driver);
+    }
+    public MenPage clickMenLink() {
+        scrollHorizontalAndClick("Men");
+        return new MenPage(driver);
+    }
+    public WomenPage clickWomenLink() {
+        scrollHorizontalAndClick("Women");
+        return new WomenPage(driver);
+    }
+    public KidsPage clickKidsLink() {
+        scrollHorizontalAndClick("Kids");
+        return new KidsPage(driver);
+    }
+    public FlowersPage clickFlowersLink() {
+        scrollHorizontalAndClick("Flowers");
+        return new FlowersPage(driver);
+    }
+    public BeautyPage clickBeautyLink() {
+        scrollHorizontalAndClick("Beauty");
+        return new BeautyPage(driver);
+    }
+
+
+    // Actions on Campaigns Sections
+    public SummerAtHomePage clickSummerPromotion() {
+        scrollVerticalAndClick("Summer At Home");
         clickLinkByID("com.trycircle.android.qa:id/btn_more");
         return new SummerAtHomePage(driver);
     }
 
     public GlowUpPage clickGlowUpLink() {
         Scroll scroll = new Scroll(driver);
-        scroll.swipeToElement("Glow Up");
+        scroll.scrollVertical("Glow Up");
         // clickLinkByID("com.trycircle.android.qa:id/tv_promotion_title");
         clickLinkByID("com.trycircle.android.qa:id/btn_more");
         return new GlowUpPage(driver);
@@ -59,23 +105,17 @@ public class DiscoveryPage {
 
     public ToysPage clickGamesLink() {
         Scroll scroll = new Scroll(driver);
-        scroll.swipeToElement("Games");
+        scroll.scrollVertical("Games");
         return new ToysPage(driver);
     }
 
-    public BeautyPage clickBeautyPage() {
+   /* public BeautyPage clickBeautyLink() {
         Scroll scroll = new Scroll(driver);
-        scroll.swipeToElement("Beauty");
+        scroll.scrollVertical("Beauty");
         return new BeautyPage(driver);
     }
 
-    public ElectronicsPage clickElectronicsPage() {
-        Scroll scroll = new Scroll(driver);
-        scroll.swipeToElement("Electronics");
-        return new ElectronicsPage(driver);
-    }
 
-/*
     public List<MobileElement> homeItems() {
         List<MobileElement> elements = driver.findElementById("com.trycircle.android.qa:id/img_banner").findElements(By.className("android.widget.ImageView"));
         return elements;

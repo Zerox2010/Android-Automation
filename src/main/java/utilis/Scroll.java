@@ -40,7 +40,7 @@ public class Scroll {
         }
     }
 
-    public void swipeToElement(String exactText){
+    public void scrollVertical(String exactText){
 
         MobileElement elementToClick = (MobileElement) driver
                 .findElement(MobileBy.AndroidUIAutomator(
@@ -51,16 +51,8 @@ public class Scroll {
 
     }
 
-    public void swipeHorizintal(String exact_text){
 
-        MobileElement element = (MobileElement) driver.findElement(MobileBy.AndroidUIAutomator(
-                "new UiScrollable("
-                        + "new UiSelector().resourceId(\"com.trycircle.android.qa:id/cats_recycler\")).setAsHorizontalList().scrollIntoView("
-                        + "new UiSelector().textContains(\""+exact_text+"\"))"));
-
-    }
-
-    public void newSwipeHotizintal(String txt){
+    public void swipeHorizontal(String txt){
 
         MobileElement element = (MobileElement) driver.findElement(MobileBy.AndroidUIAutomator(
                 "new UiScrollable("
