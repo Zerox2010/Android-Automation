@@ -1,11 +1,13 @@
 package Base;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
+import Pages.Categories.*;
+import Pages.Home.*;
+import Pages.Profile.*;
+import Pages.SignIn.*;
+import io.appium.java_client.*;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
-import Pages.*;
 import utilis.Scroll;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;

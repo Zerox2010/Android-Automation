@@ -1,6 +1,6 @@
 package Base;
 
-import Pages.*;
+import Pages.Categories.KidsPage;
 import org.testng.annotations.*;
 import utilis.Scroll;
 

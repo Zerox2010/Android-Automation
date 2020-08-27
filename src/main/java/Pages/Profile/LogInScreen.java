@@ -1,5 +1,6 @@
-package Pages;
+package Pages.Profile;
 
+import Pages.Home.DiscoveryPage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;

@@ -1,5 +1,6 @@
-package Pages;
+package Pages.SignIn;
 
+import Pages.Profile.LogInScreen;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;

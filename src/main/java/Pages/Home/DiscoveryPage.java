@@ -1,11 +1,16 @@
-package Pages;
+package Pages.Home;
 
+import Pages.Campaigns.GlowUpPage;
+import Pages.Campaigns.SummerAtHomePage;
+import Pages.Categories.BeautyPage;
+import Pages.Categories.ElectronicsPage;
+import Pages.Categories.KidsPage;
+import Pages.Categories.ToysPage;
+import Pages.Profile.ProfilePage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 import utilis.Scroll;
-
-import java.util.List;
 
 
 public class DiscoveryPage {
@@ -17,30 +22,24 @@ public class DiscoveryPage {
     private By summerAtHomeTxt = By.name("Summer at Home");
     private By summerAtHomeID = By.id("com.trycircle.android.qa:id/tv_promotion_title");
 
+
     public DiscoveryPage(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
     }
 
-
     private void clickLinkByID(String LinkID) {
         driver.findElement(By.id(LinkID)).click();
-    }
-    private void clickLinkByTxt (String TXT) {
-        driver.findElement(By.name(TXT)).click();
     }
 
     public KidsPage clickKidsLink() {
         Scroll scroll = new Scroll(driver);
         scroll.newSwipeHotizintal("Kids");
-       // clickLinkByID("com.trycircle.android.qa:id/imgCatIcon");
-
         return new KidsPage(driver);
     }
 
     public SummerAtHomePage clickSummerPromotion() {
         Scroll scroll = new Scroll(driver);
         scroll.swipeToElement("Summer at Home");
-       // clickLinkByID("com.trycircle.android.qa:id/tv_promotion_title");
         clickLinkByID("com.trycircle.android.qa:id/btn_more");
         return new SummerAtHomePage(driver);
     }

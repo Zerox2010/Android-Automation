@@ -49,27 +49,31 @@ public class Scroll {
                                 + "new UiSelector().text(\""+exactText+"\"));"));
         elementToClick.click();
 
-
     }
 
-    public void swipeHotizintal(String exact_text){
+    public void swipeHorizintal(String exact_text){
 
         MobileElement element = (MobileElement) driver.findElement(MobileBy.AndroidUIAutomator(
                 "new UiScrollable("
                         + "new UiSelector().resourceId(\"com.trycircle.android.qa:id/cats_recycler\")).setAsHorizontalList().scrollIntoView("
                         + "new UiSelector().textContains(\""+exact_text+"\"))"));
 
-       // element.click();
     }
 
-    public void newSwipeHotizintal(String exact_text){
+    public void newSwipeHotizintal(String txt){
 
         MobileElement element = (MobileElement) driver.findElement(MobileBy.AndroidUIAutomator(
                 "new UiScrollable("
-                        + "new UiSelector().resourceId(\"com.trycircle.android.qa:id/cats_recycler\")).setAsHorizontalList().scrollTextIntoView("
-                        + "new UiSelector().textContains(\""+exact_text+"\"))"));
+                        + "new UiSelector().resourceId(\"com.trycircle.android.qa:id/cats_recycler\")).setAsHorizontalList().scrollIntoView("
+                        + "new UiSelector().textContains(\""+txt+"\"))"));
 
-        element.click();
+
+        MobileElement elementToClick = (MobileElement) driver
+                .findElement(MobileBy.AndroidUIAutomator(
+                        "new UiScrollable("
+                                + "new UiSelector().scrollable(true)).scrollIntoView("
+                                + "new UiSelector().text(\""+txt+"\"));"));
+        elementToClick.click();
     }
 
 

@@ -1,16 +1,17 @@
-package Pages;
+package Pages.Categories;
 
+import Pages.Home.DiscoveryPage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 
-public class KidsPage {
+public class ToysPage {
 
     static AppiumDriver<MobileElement> driver;
 
     private By screenTitle = By.id("com.trycircle.android.qa:id/screenTitle");
 
-    public KidsPage(AppiumDriver<MobileElement> driver) {
+    public ToysPage(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
     }
 
@@ -18,7 +19,7 @@ public class KidsPage {
         driver.findElement(By.id(LinkID)).click();
     }
 
-    public String getPageTitle() {
+    public String getToysTitle() {
         return driver.findElement(screenTitle).getText();
     }
 
@@ -27,4 +28,5 @@ public class KidsPage {
         clickLink("com.trycircle.android.qa:id/btnBack");
         return new DiscoveryPage(driver);
     }
+
 }
