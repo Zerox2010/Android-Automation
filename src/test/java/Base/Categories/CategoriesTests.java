@@ -28,8 +28,6 @@ public class CategoriesTests extends BaseTests {
        HomePage homePage = discoveryPage.clickHomeLink();
        assertEquals(homePage.getPageTitle(), "Home");
        homePage.backButton();
-
-
     }
 
     @Test

@@ -1,5 +1,6 @@
 package Pages.Home;
 
+import Pages.BottomBar.DealsPage;
 import Pages.Campaigns.*;
 import Pages.Categories.*;
 import Pages.Profile.*;
@@ -25,7 +26,7 @@ public class DiscoveryPage {
     }
 
     //Scroll Horizontal And Click Method
-    public void scrollHorizontalAndClick(String categoryName){
+    public void swipeHorizontalAndClick(String categoryName){
         Scroll scroll = new Scroll(driver);
         scroll.swipeHorizontal(categoryName);
     }
@@ -38,47 +39,48 @@ public class DiscoveryPage {
 
     // Actions on Categories Links
     public ElectronicsPage clickElectronicsLink() {
-        scrollHorizontalAndClick("Electronics");
+        swipeHorizontalAndClick("Electronics");
         return new ElectronicsPage(driver);
     }
     public BooksPage clickBooksLink() {
-        scrollHorizontalAndClick("Books");
+        swipeHorizontalAndClick("Books");
         return new BooksPage(driver);
     }
     public HomePage clickHomeLink() {
-        scrollHorizontalAndClick("Home");
+       // swipeHorizontalAndClick("Home");
+        scrollVerticalAndClick("Home");
         return new HomePage(driver);
     }
     public ToysPage clickToysLink() {
-        scrollHorizontalAndClick("Toys");
+        swipeHorizontalAndClick("Toys");
         return new ToysPage(driver);
     }
     public PerfumesPage clickPerfumesLink() {
-        scrollHorizontalAndClick("Perfumes");
+        swipeHorizontalAndClick("Perfumes");
         return new PerfumesPage(driver);
     }
     public PetsPage clickPetsLink() {
-        scrollHorizontalAndClick("Pets");
+        swipeHorizontalAndClick("Pets");
         return new PetsPage(driver);
     }
     public MenPage clickMenLink() {
-        scrollHorizontalAndClick("Men");
+        swipeHorizontalAndClick("Men");
         return new MenPage(driver);
     }
     public WomenPage clickWomenLink() {
-        scrollHorizontalAndClick("Women");
+        swipeHorizontalAndClick("Women");
         return new WomenPage(driver);
     }
     public KidsPage clickKidsLink() {
-        scrollHorizontalAndClick("Kids");
+        swipeHorizontalAndClick("Kids");
         return new KidsPage(driver);
     }
     public FlowersPage clickFlowersLink() {
-        scrollHorizontalAndClick("Flowers");
+        swipeHorizontalAndClick("Flowers");
         return new FlowersPage(driver);
     }
     public BeautyPage clickBeautyLink() {
-        scrollHorizontalAndClick("Beauty");
+        swipeHorizontalAndClick("Beauty");
         return new BeautyPage(driver);
     }
 
@@ -114,8 +116,14 @@ public class DiscoveryPage {
         scroll.scrollVertical("Beauty");
         return new BeautyPage(driver);
     }
+*/
+    // Actions on Bottom Navigation Bar Icons
+    public DealsPage clickDealsIcon() {
+        clickLinkByID("com.trycircle.android.qa:id/deals");
+        return new DealsPage(driver);
+    }
 
-
+/*
     public List<MobileElement> homeItems() {
         List<MobileElement> elements = driver.findElementById("com.trycircle.android.qa:id/img_banner").findElements(By.className("android.widget.ImageView"));
         return elements;

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Automation Suite" verbose="1">
-    <test name="All Testcases">
-        <packages>
-            <package name="app.Circle.MobileAutomation"></package>
-        </packages>
-    </test>
-</suite>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Testing Google Apps">
+    <test name="Regression">
+         <classes>
+             <class name="Base.Categories.CategoriesTests"/>
+          </classes>
+     </test> <!-- Test -->
+</suite> <!-- Suite -->
